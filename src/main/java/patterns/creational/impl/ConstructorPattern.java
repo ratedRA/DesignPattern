@@ -1,13 +1,12 @@
 package patterns.creational.impl;
 
-import com.sun.tools.javac.util.StringUtils;
+import patterns.creational.CreationalPattern;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * The “constructor pattern”, as the name defines, is a class-based pattern that uses the constructors present
@@ -21,7 +20,7 @@ import java.util.stream.Stream;
  *
  * plugins
  */
-public class ConstructorPattern {
+public class ConstructorPattern implements CreationalPattern {
 
     public static void main(String[] args) {
         Person person1 = new Person("John", Gender.MALE, 23);
