@@ -5,6 +5,22 @@ import patterns.creational.CreationalPattern;
 import java.util.HashMap;
 import java.util.Map;
 
+
+/**
+ * The prototype creational pattern is used to instantiate objects with some default values using an existing object.
+ * It clones the object and provides the existing properties to the cloned object using prototypal inheritance.
+ *
+ * In prototypal inheritance, a prototype object acts as a blueprint from which other objects inherit when the constructor
+ * instantiates them. Hence, any properties defined on the prototype of a constructor function will also be present
+ * in the cloned object it creates.
+ *
+ * Usages -
+ * To eliminate the overhead of initializing an object
+ *
+ * When you want the system to be independent about how the products in it are created
+ *
+ * When creating objects from a database, whose values are copied to the cloned object
+ */
 public class PrototypePattern implements CreationalPattern {
 
     public static void main(String[] args) {
