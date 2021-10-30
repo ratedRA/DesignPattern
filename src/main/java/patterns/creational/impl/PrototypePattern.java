@@ -29,6 +29,7 @@ public class PrototypePattern implements CreationalPattern {
 
         leo.kick(raph);
         leo.punch(raph);
+        raph.changeName("newRaph");
         leo.kick(raph);
         leo.punch(raph);
     }
@@ -49,8 +50,13 @@ public class PrototypePattern implements CreationalPattern {
     private static abstract class Ninja implements Cloneable{
 
         private int points = 100;
+        protected String name;
 
         public abstract String getName();
+
+        public void changeName(String name){
+            this.name = name;
+        }
 
         @Override
         protected Object clone() {
@@ -85,14 +91,20 @@ public class PrototypePattern implements CreationalPattern {
     private static class Leo extends Ninja{
         @Override
         public String getName() {
-            return "Leo";
+            if(super.name == null){
+                return "Leo";
+            }
+            return name;
         }
     }
 
     private static class Raph extends Ninja{
         @Override
         public String getName() {
-            return "Raph";
+            if(super.name == null){
+                return "Raph";
+            }
+            return name;
         }
     }
 }
