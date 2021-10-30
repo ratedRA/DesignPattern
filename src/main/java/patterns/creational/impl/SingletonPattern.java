@@ -26,7 +26,7 @@ public class SingletonPattern implements CreationalPattern {
         System.out.println(dbCreds.toString());
 
         DbCreds dbCreds12 = DbCreds.getInstance("root12", "rootPassword12");
-        System.out.println(dbCreds.toString());
+        System.out.println(dbCreds12.toString());
     }
 
     private static class DbCreds {
