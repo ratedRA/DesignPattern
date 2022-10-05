@@ -1,7 +1,7 @@
 package patterns.creational.impl;
 
-import com.sun.tools.javac.util.Assert;
 import org.apache.commons.lang3.StringUtils;
+import org.junit.Assert;
 import patterns.creational.CreationalPattern;
 
 import java.util.HashMap;
@@ -49,9 +49,9 @@ public class FactoryPattern implements CreationalPattern {
 
         private static final Function<Map<String, String>, Toy> toyCreationFn = (paramsMap) -> {
 
-            Assert.checkNonNull(paramsMap, "paramsMap cannot be null");
+            Assert.assertNotNull("paramsMap cannot be null", paramsMap);
             String type = paramsMap.get("type").toUpperCase();
-            Assert.check(StringUtils.isNotBlank(type), "type is required");
+            Assert.assertTrue(StringUtils.isNotBlank(type));
 
             FactoryPattern.ToyType toyType = FactoryPattern.ToyType.valueOf(type);
 
